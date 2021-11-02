@@ -1,6 +1,6 @@
 class PostsController < ApplicationController
   before_action :set_post, only: :show
-  # before_action :authorize_request, only: %i[create update destroy]
+  before_action :authorize_request, only: %i[create update destroy]
   before_action :set_user_post, only: %i[update destroy]
 
   # GET /posts
