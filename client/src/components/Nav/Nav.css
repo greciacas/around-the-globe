@@ -1,0 +1,19 @@
+@import url('https://fonts.googleapis.com/css2?family=Sansita:ital,wght@1,900&display=swap');
+
+.navbar{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #FFF4F4;
+  border-bottom: 1px solid #ffecec;
+  padding: 10px;
+}
+
+.home-link{
+  text-decoration: none;
+}
+
+h1{
+  font-family: 'Sansita', sans-serif;
+  color: #B70A0A;
+}

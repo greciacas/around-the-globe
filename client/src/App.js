@@ -1,23 +1,35 @@
-import logo from './logo.svg';
 import './App.css';
+import { useState } from 'react';
+import { Switch, Route } from 'react-router-dom';
+import Layout from './components/Layout/Layout';
+import SignIn from './screens/SignIn/SignIn';
+import { loginUser } from './services/auth';
+import Home from './screens/Home/Home';
 
 function App() {
+  const [currentUser, setCurrentUser] = useState(null);
+
+  const handleLogin = async (formData) => {
+    const userData = await loginUser(formData);
+    setCurrentUser(userData);
+  };
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Layout>
+        <Switch>
+          <Route exact path='/'>
+            <Home/>
+          </Route>
+          <Route exact path='/login'>
+            <SignIn handleLogin={handleLogin}/>
+          </Route>
+
+          <Route exact path='/register'>
+            <h2>register</h2>
+          </Route>
+        </Switch>
+      </Layout>
     </div>
   );
 }
