@@ -21,7 +21,7 @@ function App() {
           <Route exact path='/'>
             <Home/>
           </Route>
-          <Route exact path='/login'>
+          <Route exact path='/auth/login'>
             <SignIn handleLogin={handleLogin}/>
           </Route>
 
