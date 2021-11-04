@@ -1,0 +1,12 @@
+.posts{
+  margin: 20px 0px;
+}
+
+.post{
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  align-content: flex-start;
+  justify-content: center;
+  align-items: center;
+}

@@ -1,15 +1,33 @@
 import './App.css';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Switch, Route, useHistory } from 'react-router-dom';
 import Layout from './components/Layout/Layout';
 import SignIn from './screens/SignIn/SignIn';
 import SignUp from './screens/SignUp/SignUp';
-import { loginUser, registerUser, removeToken } from './services/auth';
+import { loginUser, registerUser, removeToken, verifyUser } from './services/auth';
 import Home from './screens/Home/Home';
+import { getAllPosts } from './services/posts';
 
 function App() {
   const [currentUser, setCurrentUser] = useState(null);
+  const [posts, setPosts] = useState([]);
   const history = useHistory();
+
+  useEffect(() => {
+    const handleVerify = async () => {
+      const userData = await verifyUser();
+      setCurrentUser(userData);
+    };
+    handleVerify();
+  }, []);
+
+  useEffect(() => {
+    const fetchPosts = async () => {
+      const postList = await getAllPosts();
+      setPosts(postList);
+    };
+    fetchPosts();
+  }, []);
 
   const handleLogin = async (formData) => {
     const userData = await loginUser(formData);
@@ -34,7 +52,7 @@ function App() {
       <Layout currentUser={currentUser} handleLogout={handleLogout}>
         <Switch>
           <Route exact path='/'>
-            <Home/>
+            <Home posts={posts}/>
           </Route>
           <Route exact path='/login'>
             <SignIn handleLogin={handleLogin}/>

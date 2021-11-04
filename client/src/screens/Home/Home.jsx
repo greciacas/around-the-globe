@@ -1,16 +1,19 @@
-import { useState, useEffect } from 'react';
-import axios from 'axios';
-
-export default function Home() {
-  const [posts, setPosts] = useState([]);
-
-  useEffect(()=> {
-    axios.get('/')
-  }, [])
+import './Home.css';
+  
+export default function Home(props) {
+  const { posts } = props;
   
   return (
     <div className='posts'>
-      <h3>post components here</h3>
+      {posts.map((post, index) => (
+        <div key={index} className='post'>
+          {post.user_id}
+          <br/>
+          {post.location}
+          <img src={post.image_url} alt={posts} style={{ height: 100, width: 100 }} />
+          <br/>
+        </div>
+      ))}
     </div>
-  )
+  );
 }
