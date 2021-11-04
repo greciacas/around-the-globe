@@ -41,7 +41,7 @@ export default function SignIn(props) {
       />
       </label>
       <br/>
-      <Link to='/register'>Sign Up</Link>
+      <h4>Don't have an account? <Link to='/register'>Sign Up</Link></h4>
       <button>Submit</button>
     </form>
   )
