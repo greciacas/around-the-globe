@@ -9,6 +9,15 @@
   padding: 10px;
 }
 
+.profile,
+.logout,
+.login,
+.register{
+  text-decoration: none;
+  font-family: 'Sansita';
+  color: #B70A0A;
+}
+
 .home-link{
   text-decoration: none;
 }

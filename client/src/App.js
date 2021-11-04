@@ -6,11 +6,10 @@ import SignIn from './screens/SignIn/SignIn';
 import SignUp from './screens/SignUp/SignUp';
 import { loginUser, registerUser, removeToken, verifyUser } from './services/auth';
 import Home from './screens/Home/Home';
-import { getAllPosts } from './services/posts';
+import Details from './screens/Details/Details';
 
 function App() {
   const [currentUser, setCurrentUser] = useState(null);
-  const [posts, setPosts] = useState([]);
   const history = useHistory();
 
   useEffect(() => {
@@ -19,14 +18,6 @@ function App() {
       setCurrentUser(userData);
     };
     handleVerify();
-  }, []);
-
-  useEffect(() => {
-    const fetchPosts = async () => {
-      const postList = await getAllPosts();
-      setPosts(postList);
-    };
-    fetchPosts();
   }, []);
 
   const handleLogin = async (formData) => {
@@ -52,8 +43,9 @@ function App() {
       <Layout currentUser={currentUser} handleLogout={handleLogout}>
         <Switch>
           <Route exact path='/'>
-            <Home posts={posts}/>
+            <Home/>
           </Route>
+
           <Route exact path='/login'>
             <SignIn handleLogin={handleLogin}/>
           </Route>
@@ -61,6 +53,11 @@ function App() {
           <Route exact path='/register'>
             <SignUp handleRegister={handleRegister}/>
           </Route>
+
+          <Route exact path='/posts/:id'>
+            <Details/>
+          </Route>
+
         </Switch>
       </Layout>
     </div>

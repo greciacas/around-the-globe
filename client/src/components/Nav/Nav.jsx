@@ -6,15 +6,15 @@ export default function Nav(props) {
 
   const authenticated = (
     <>
-      <NavLink to='/profile'>PROFILE</NavLink>
-      <NavLink to='/' onClick={handleLogout}>Logout</NavLink>
+      <NavLink to='/profile' className='profile'>PROFILE</NavLink>
+      <NavLink to='/' onClick={handleLogout} className='logout'>LOGOUT</NavLink>
     </>
   )
 
   const unathenticated = (
     <>
-      <Link to='/login'>Sign In</Link>
-      <Link to='/register'>Sign Up</Link>
+      <Link to='/login' className='login'>SIGN IN</Link>
+      <Link to='/register' className='register'>SIGN UP</Link>
     </>
   )
 
