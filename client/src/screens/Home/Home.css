@@ -1,5 +1,8 @@
 .posts{
-  display: flex;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 10px;
   /* width: 400px;
   background-color: white;
   margin-right: auto;
@@ -8,8 +11,8 @@
   margin-top: 20px;
   margin-bottom: 20px; */
   flex-wrap: wrap;
-  justify-content: space-evenly;
-  width: 90vw;
+  /* justify-content: space-evenly; */
+  width: 50%;
   padding: 40px;
 }
 
@@ -27,4 +30,9 @@
   margin-bottom: 10px;
   background-color: #ffecec;
   border-radius: 20px;
+}
+
+.link{
+  text-decoration: none;
+  color: black;
 }

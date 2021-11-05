@@ -1,12 +1,15 @@
 import './App.css';
 import { useState, useEffect } from 'react';
-import { Switch, Route, useHistory } from 'react-router-dom';
+import { Switch, Route, useHistory, Redirect } from 'react-router-dom';
 import Layout from './components/Layout/Layout';
 import SignIn from './screens/SignIn/SignIn';
 import SignUp from './screens/SignUp/SignUp';
-import { loginUser, registerUser, removeToken, verifyUser } from './services/auth';
 import Home from './screens/Home/Home';
 import Details from './screens/Details/Details';
+import Profile from './screens/Profile/Profile';
+import Edit from './screens/Edit/Edit';
+import Create from './screens/Create/Create';
+import { loginUser, registerUser, removeToken, verifyUser } from './services/auth';
 
 function App() {
   const [currentUser, setCurrentUser] = useState(null);
@@ -54,8 +57,23 @@ function App() {
             <SignUp handleRegister={handleRegister}/>
           </Route>
 
+          <Route exact path='/posts/create'>
+            {/* {currentUser ? <Create currentUser={currentUser} /> : <Redirect to='/' />} */}
+            <Create/>
+          </Route>
+
           <Route exact path='/posts/:id'>
             <Details/>
+          </Route>
+
+          <Route exact path='/profile' >
+            {/* {currentUser ? <Profile currentUser={currentUser} /> : <Redirect to='/' />} */}
+            <Profile/>
+          </Route>
+
+          <Route exact path='/posts/:id/edit'>
+            {/* {currentUser ? <Edit currentUser={currentUser} /> : <Redirect to='/' />} */}
+            <Edit/>
           </Route>
 
         </Switch>
