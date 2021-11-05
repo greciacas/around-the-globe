@@ -46,7 +46,7 @@ function App() {
       <Layout currentUser={currentUser} handleLogout={handleLogout}>
         <Switch>
           <Route exact path='/'>
-            <Home/>
+          {currentUser ? <Home currentUser={currentUser}/> : <Redirect to='/'/>}
           </Route>
 
           <Route exact path='/login'>
@@ -58,21 +58,21 @@ function App() {
           </Route>
 
           <Route exact path='/posts/create'>
-            {/* {currentUser ? <Create currentUser={currentUser} /> : <Redirect to='/' />} */}
+            {currentUser ? <Create currentUser={currentUser}/> : <Redirect to='/'/>}
             <Create/>
           </Route>
 
           <Route exact path='/posts/:id'>
-            <Details/>
+          {currentUser ? <Details currentUser={currentUser}/> : <Redirect to='/'/>}
           </Route>
 
           <Route exact path='/profile' >
-            {/* {currentUser ? <Profile currentUser={currentUser} /> : <Redirect to='/' />} */}
+            {currentUser ? <Profile currentUser={currentUser}/> : <Redirect to='/'/>}
             <Profile/>
           </Route>
 
           <Route exact path='/posts/:id/edit'>
-            {/* {currentUser ? <Edit currentUser={currentUser} /> : <Redirect to='/' />} */}
+            {currentUser ? <Edit currentUser={currentUser}/> : <Redirect to='/'/>}
             <Edit/>
           </Route>
 

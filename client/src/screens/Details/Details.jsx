@@ -17,8 +17,8 @@ export default function Details() {
 
   return (
     <div post={post} className='details'>
-      {post?.user_id}
-      {post?.location}
+      <h4>@{post?.user.username}</h4>
+      <p>{post?.location}</p>
       <img src={post?.image_url}
         alt='post'
         style={{
@@ -27,8 +27,7 @@ export default function Details() {
           borderRadius: 20
         }}
       />
-      <button>Edit</button>
-      <button>Delete</button>
+      <p>Comments:  {post?.comments[0].content}</p>
     </div>
   )
 }

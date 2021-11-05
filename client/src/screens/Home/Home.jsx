@@ -20,9 +20,8 @@ export default function Home() {
           return (
             <div className='post' key={index}>
               <Link to={`/posts/${post.id}`} className='link'>
-                <div>{post.user.username}</div>
-                <br />
-                <div>{post.location}</div>
+                <h4>@{post.user.username}</h4>
+                <p>{post.location}</p>
                 <div>
                   <img src={post.image_url}
                     alt={posts}

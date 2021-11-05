@@ -1,7 +1,16 @@
 export default function Create() {
   return (
-    <div>
-      create
-    </div>
+    <form>
+      <label>Location:</label>
+      <input
+        type='text'
+        placeholder='text'
+      />
+      <input
+        type='file'
+        accept='image/*'
+      />
+      <button>POST</button>
+    </form>
   )
 }

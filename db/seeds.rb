@@ -6,6 +6,7 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
+Comment.destroy_all
 Post.destroy_all
 User.destroy_all
 
@@ -25,7 +26,7 @@ Post.create!(
 )
 Post.create!(
   image_url: 'https://res.cloudinary.com/dehiekpya/image/upload/v1635904232/posts/jabnxhhp1gnkxcfo9bho.jpg',
-  location: '-Newrochelle, NY',
+  location: 'Modern Restaurant and Lounge-Newrochelle, NY',
   user: @admin
 )
 Post.create!(
@@ -35,3 +36,26 @@ Post.create!(
 )
 
 puts "#{Post.count} posts created"
+
+Comment.create!(
+  content: 'Food 10/10',
+  user: @admin,
+  post: Post.first
+)
+Comment.create!(
+  content: 'Overrated',
+  user: @admin,
+  post: Post.second
+)
+Comment.create!(
+  content: 'Terrible service but food was good',
+  user: @admin,
+  post: Post.third
+)
+Comment.create!(
+  content: 'Nice place by the beach, good service',
+  user: @admin,
+  post: Post.fourth
+)
+
+puts "#{Comment.count} comments created"
