@@ -15,7 +15,7 @@ export default function Create() {
     const files = e.target.files;
     const data = new FormData();
     data.append("file", files[0]);
-    data.append("upload_preset", "post-foods");
+    data.append("upload_preset", "post-food");
     setLoading(true);
     const res = await fetch(
       "https://api.cloudinary.com/v1_1/dehiekpya/image/upload",
@@ -40,14 +40,14 @@ export default function Create() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const created = await postPost(postData);
+    const created = await postPost(post);
     setIsCreated({ created });  
   };
 
   if (isCreated) return <Redirect to={`/posts`}/>;
 
   return (
-    <form handleSubmit={handleSubmit}>
+    <form handleSubmit={handleSubmit} >
       <div>
         {loading ? (
           <h5>Post Loading..</h5>
