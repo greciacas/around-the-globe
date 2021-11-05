@@ -59,7 +59,6 @@ function App() {
 
           <Route exact path='/posts/create'>
             {currentUser ? <Create currentUser={currentUser}/> : <Redirect to='/'/>}
-            <Create/>
           </Route>
 
           <Route exact path='/posts/:id'>
@@ -68,12 +67,10 @@ function App() {
 
           <Route exact path='/profile' >
             {currentUser ? <Profile currentUser={currentUser}/> : <Redirect to='/'/>}
-            <Profile/>
           </Route>
 
           <Route exact path='/posts/:id/edit'>
             {currentUser ? <Edit currentUser={currentUser}/> : <Redirect to='/'/>}
-            <Edit/>
           </Route>
 
         </Switch>
