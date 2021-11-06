@@ -44,10 +44,10 @@ export default function Create() {
     setIsCreated({ created });  
   };
 
-  if (isCreated) return <Redirect to={`/posts`}/>;
+  if (isCreated) return <Redirect to={`/`}/>;
 
   return (
-    <form handleSubmit={handleSubmit} >
+    <form onSubmit={handleSubmit} >
       <div>
         {loading ? (
           <h5>Post Loading..</h5>
@@ -61,12 +61,14 @@ export default function Create() {
         name='location'
         onChange={handleChange}
       />
+      <br/>
       <input
         type='file'
         accept='image/*'
         onChange={uploadImage}
       />
-      <button type='submit'>POST</button>
+      <br />
+      <button>POST</button>
     </form>
   )
 }

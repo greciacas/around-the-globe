@@ -10,10 +10,20 @@ import Profile from './screens/Profile/Profile';
 import Edit from './screens/Edit/Edit';
 import Create from './screens/Create/Create';
 import { loginUser, registerUser, removeToken, verifyUser } from './services/auth';
+import { getAllPosts } from './services/posts';
 
 function App() {
   const [currentUser, setCurrentUser] = useState(null);
+  const [posts, setPosts] = useState([]);
   const history = useHistory();
+
+  useEffect(() => {
+    const fetchPosts = async () => {
+      const postList = await getAllPosts();
+      setPosts(postList);
+    };
+    fetchPosts();
+  }, []);
 
   useEffect(() => {
     const handleVerify = async () => {
@@ -46,7 +56,7 @@ function App() {
       <Layout currentUser={currentUser} handleLogout={handleLogout}>
         <Switch>
           <Route exact path='/'>
-          {currentUser ? <Home currentUser={currentUser}/> : <Redirect to='/'/>}
+            {currentUser ? <Home currentUser={currentUser} posts={posts}/> : <Redirect to='/'/>}
           </Route>
 
           <Route exact path='/login'>
@@ -66,7 +76,7 @@ function App() {
           </Route>
 
           <Route exact path='/profile' >
-            {currentUser ? <Profile currentUser={currentUser}/> : <Redirect to='/'/>}
+            {currentUser ? <Profile currentUser={currentUser} posts={posts}/> : <Redirect to='/'/>}
           </Route>
 
           <Route exact path='/posts/:id/edit'>

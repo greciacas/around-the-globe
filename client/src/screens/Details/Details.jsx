@@ -22,12 +22,13 @@ export default function Details() {
       <img src={post?.image_url}
         alt='post'
         style={{
-          height: 150,
-          width: 150,
+          width: 200,
           borderRadius: 20
         }}
       />
-      <p>Comments:  {post?.comments[0].content}</p>
+      <div>Comments:  {post?.comments.map((comment, index) => (
+        <p key={index}>{comment.content}</p>
+      ))}</div>
     </div>
   )
 }

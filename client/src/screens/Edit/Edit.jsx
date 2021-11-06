@@ -6,10 +6,6 @@ export default function Edit() {
         type='text'
         placeholder='text'
       />
-      <input
-        type='file'
-        accept='image/*'
-      />
       <button>save</button>
       </form>
   )
