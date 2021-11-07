@@ -1,31 +1,16 @@
 .posts{
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-gap: 10px;
-  /* width: 400px;
-  background-color: white;
-  margin-right: auto;
-  margin-left: auto;
-  border: 1px solid lightgray;
-  margin-top: 20px;
-  margin-bottom: 20px; */
+  display: flex;
   flex-wrap: wrap;
-  /* justify-content: space-evenly; */
-  width: 50%;
-  padding: 40px;
+  width: 100%;
 }
 
 .post{
-  /* display: flex;
-  flex-direction: column;
-  /* flex-wrap: nowrap; */
-  /* align-content: flex-start; */
-  /* justify-content: center; */
-  /* align-items: center; */
-  width: 300px;
-  margin: 10px;
+  width: 250px;
+  /* margin: auto; */
+  margin-top: 30px;
+  margin: 20px;
   box-shadow:0px 1px 2px 2px lightgray;
-  padding: 30px;
+  padding: 20px;
   margin-bottom: 10px;
   background-color: #ffecec;
   border-radius: 20px;
