@@ -1,5 +1,7 @@
+import './SignUp.css';
 import { useState } from 'react'
 import { Link } from 'react-router-dom';
+import {IoArrowForwardSharp} from 'react-icons/io5'
 
 export default function SignUp(props) {
   const [formData, setFormData] = useState({
@@ -18,7 +20,8 @@ export default function SignUp(props) {
   };
 
   return (
-    <form onSubmit={(e) => {
+    <div className='sign-up-bigger-div'>
+    <form className='sign-up' onSubmit={(e) => {
       e.preventDefault();
       props.handleRegister(formData)
     }}>
@@ -41,8 +44,9 @@ export default function SignUp(props) {
       />
       </label>
       <br/>
-      <h4>Already have an account? <Link to='/login'>Sign In</Link></h4>
-      <button>Submit</button>
-    </form>
+      <h4>Already have an account? <IoArrowForwardSharp/> <Link to='/login'>Sign In</Link></h4>
+      <button className='submit-sign-up'>Submit</button>
+      </form>
+      </div>
   )
 }

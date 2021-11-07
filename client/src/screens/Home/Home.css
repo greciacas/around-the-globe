@@ -2,11 +2,12 @@
   display: flex;
   flex-wrap: wrap;
   width: 100%;
+  margin-left: 70px;
+  margin-right: 80px;
 }
 
 .post{
   width: 250px;
-  /* margin: auto; */
   margin-top: 30px;
   margin: 20px;
   box-shadow:0px 1px 2px 2px lightgray;
@@ -14,6 +15,12 @@
   margin-bottom: 10px;
   background-color: #ffecec;
   border-radius: 20px;
+}
+
+.post:hover{
+  background-color: #eddbdb;
+  transform: scale(.9, .9);
+  cursor: pointer;
 }
 
 .link{

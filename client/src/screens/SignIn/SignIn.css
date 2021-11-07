@@ -1,0 +1,34 @@
+.outer-div{
+  display: inline-block;
+  width: 500px;
+  box-shadow:0px 1px 2px 2px lightgray;
+  padding: 20px;
+  margin-top: 50px;
+  margin-bottom: 10px;
+  background-color: #ffecec;
+  border-radius: 20px;
+}
+
+.sign-in{
+  width: 400px;
+  margin-left: 40px;
+  margin-bottom: 30px;
+  padding-bottom: 10px;
+  background-color: white;
+  border-radius: 20px;
+  box-shadow:0px 1px 2px 2px lightgray;
+}
+
+.submit-sign-in{
+  padding: 7px;
+  margin-top: 10px;
+  border-radius: 5px;
+  color: #ffecec;
+  background-color: #B70A0A;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.submit-sign-in:hover{
+  transform: scale(1.2, 1.1);
+}

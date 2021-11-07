@@ -1,5 +1,7 @@
 import './Nav.css';
 import { Link, NavLink } from 'react-router-dom';
+import { IoEarth } from 'react-icons/io5';
+import { GiCommercialAirplane } from 'react-icons/gi';
 
 export default function Nav(props) {
   const { currentUser, handleLogout } = props;
@@ -21,7 +23,7 @@ export default function Nav(props) {
   return (
     <nav>
       <div className='navbar'>
-        <Link to='/' className='home-link'><h1>Around the Globe</h1></Link>
+        <Link to='/' className='home-link'><h1>Around the Globe <GiCommercialAirplane/> <IoEarth/></h1></Link>
         {currentUser ? authenticated : unathenticated}
       </div>
     </nav>

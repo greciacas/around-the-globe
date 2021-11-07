@@ -2,6 +2,7 @@ import './Details.css'
 import { useState, useEffect } from 'react';
 import { useParams} from "react-router-dom";
 import { getOnePost } from '../../services/posts';
+import { FaMapMarkerAlt } from 'react-icons/fa';
 
 export default function Details() {
   const [postDetail, setPostDetail] = useState(null);
@@ -16,9 +17,9 @@ export default function Details() {
   }, [id]);
 
   return (
-    <div post={postDetail} className='details'>
+    <div post={postDetail} className='details-div'>
       <h4>@{postDetail?.user.username}</h4>
-      <p>{postDetail?.location}</p>
+      <p> <FaMapMarkerAlt/> {postDetail?.location}</p>
       <img src={postDetail?.image_url}
         alt='post'
         style={{
@@ -26,9 +27,9 @@ export default function Details() {
           borderRadius: 20
         }}
       />
-      <div>Comments:  {postDetail?.comments.map((comment, index) => (
+      <h4>Comments:  {postDetail?.comments.map((comment, index) => (
         <p key={index}>{comment.content}</p>
-      ))}</div>
+      ))}</h4>
     </div>
   )
 }

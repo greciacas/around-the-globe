@@ -1,0 +1,27 @@
+.whole-div{
+  flex-wrap: wrap;
+  margin-top: 30px;
+  width: 100%;
+}
+
+.details{
+  display: inline-block;
+  max-width: 300px;
+  margin-top: 30px;
+  margin: 20px;
+  box-shadow:0px 1px 2px 2px lightgray;
+  padding: 20px;
+  margin-bottom: 10px;
+  background-color: #ffecec;
+  border-radius: 20px;
+}
+
+.submit-edit{
+  padding: 5px;
+  margin-top: 10px;
+  border-radius: 5px;
+  color: #ffecec;
+  font-weight: bold;
+  background-color: #B70A0A;
+  cursor: pointer;
+}

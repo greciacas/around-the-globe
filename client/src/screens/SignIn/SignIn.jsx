@@ -1,5 +1,7 @@
+import './SignIn.css';
 import { useState } from 'react'
 import { Link } from 'react-router-dom';
+import {IoArrowForwardSharp} from 'react-icons/io5'
 
 export default function SignIn(props) {
   const [formData, setFormData] = useState({
@@ -18,7 +20,8 @@ export default function SignIn(props) {
   };
 
   return (
-    <form onSubmit={(e) => {
+    <div className='outer-div'>
+    <form className='sign-in' onSubmit={(e) => {
       e.preventDefault();
       props.handleLogin(formData)
     }}>
@@ -41,8 +44,9 @@ export default function SignIn(props) {
       />
       </label>
       <br/>
-      <h4>Don't have an account? <Link to='/register'>Sign Up</Link></h4>
-      <button>Submit</button>
-    </form>
+        <h4>Don't have an account? <IoArrowForwardSharp/> <Link to='/register'>Sign Up</Link></h4>
+      <button className='submit-sign-in'>Submit</button>
+      </form>
+      </div>
   )
 }
