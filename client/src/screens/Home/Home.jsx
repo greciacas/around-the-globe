@@ -11,7 +11,7 @@ export default function Home(props) {
           return (
             <div className='post' key={index}>
               <Link to={`/posts/${post.id}`} className='link'>
-                <h4>@{post.user.username}</h4>
+                <h4>@{post.user?.username}</h4>
                 <p> <FaMapMarkerAlt/> {post.location}</p>
                 <div>
                   <img src={post.image_url}
@@ -19,7 +19,7 @@ export default function Home(props) {
                     style={{
                       maxWidth: 200,
                       maxHeight: 200,
-                      borderRadius: 20
+                      borderRadius: 14
                     }}
                   />
                 </div>

@@ -12,6 +12,7 @@ import Create from './screens/Create/Create';
 import { loginUser, registerUser, removeToken, verifyUser } from './services/auth';
 import { getAllPosts } from './services/posts';
 
+
 function App() {
   const [currentUser, setCurrentUser] = useState(null);
   const [posts, setPosts] = useState([]);

@@ -42,8 +42,8 @@ export default function Edit() {
         <img src={editPost?.image_url}
           alt='post'
           style={{
-            width: 200,
-            borderRadius: 20
+            maxWidth: 200,
+            borderRadius: 10
           }}
         />
         <form onSubmit={handleSubmit} className='edit-form'>

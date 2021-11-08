@@ -1,0 +1,32 @@
+#file {
+  display: none;
+}
+
+.upload {
+  display: inline-flex;
+  width: 115px;
+  margin-top: 15px;
+  margin-bottom: 30px;
+  padding: 10px 10px;
+  cursor: pointer;
+  border-radius: 4px;
+  box-shadow: 0 2px 2px grey;
+  color: #B70A0A;
+  font-weight: bold;
+  background-color: #ffecec;
+}
+
+.upload:hover,
+.create-post:hover{
+  transform: scale(1.1, 1.1);
+}
+
+.create-post{
+  padding: 7px;
+  margin-top: 10px;
+  border-radius: 5px;
+  color: #ffecec;
+  font-weight: bold;
+  background-color: #B70A0A;
+  cursor: pointer;
+}

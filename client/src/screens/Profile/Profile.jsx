@@ -17,7 +17,7 @@ export default function Profile(props) {
           <div key={index}>
             <h4>@{post.user.username}</h4>
             <p> <FaMapMarkerAlt/> {post.location}</p>
-            <img src={post.image_url} alt='post' style={{ height: 260, width: 280 }} />
+            <img src={post.image_url} alt='post' style={{ borderRadius: 10, maxHeight: 260, maxWidth: 280 }} />
             <br />
             <Link to={`/posts/${post.id}/edit`}><button className='edit'>EDIT</button></Link>
             <button className='delete' onClick={()=>deletePost(post.id)}>DELETE</button>

@@ -34,7 +34,7 @@ h1{
   color: #B70A0A;
 }
 
-@media screen and (max-width: 800px) {
+@media (max-width: 1024px) {
   nav{
     display: flex;
     align-items: flex-end;
@@ -42,6 +42,16 @@ h1{
     background-color: #f9e4e4;
     border-bottom: 2px solid #fff8f8;
     padding: 10px;
+  }
+  
+  .navbar{
+    display: flex;
+    justify-content: space-between;
+  }
+
+  h1{
+    font-family: 'Sansita', sans-serif;
+    color: #850303;
   }
 
   .profile,
@@ -51,7 +61,40 @@ h1{
   .home-link{
     text-decoration: none;
     font-family: 'Sansita';
-    color: #B70A0A;
+    color: #850303;
+  }
+}
+
+@media (max-width: 800px) {
+  h1{
+    font-family: 'Sansita', sans-serif;
+    color: #850303;
   }
 
+  .profile,
+  .logout,
+  .login,
+  .register,
+  .home-link{
+    text-decoration: none;
+    font-family: 'Sansita';
+    color: #850303;
+  }
+}
+
+@media (max-width: 450px) {
+  h1{
+    font-family: 'Sansita', sans-serif;
+    color: #850303;
+  }
+
+  .profile,
+  .logout,
+  .login,
+  .register,
+  .home-link{
+    text-decoration: none;
+    font-family: 'Sansita';
+    color: #850303;
+  }
 }

@@ -7,3 +7,16 @@
   background-color: #ffecec;
   border-radius: 20px;
 }
+
+@media (max-width: 1024px) {
+  .details-div{
+    margin-right: 190px;
+  }
+}
+
+@media (max-width: 450px) {
+  .details-div{
+    width: 200px;
+    margin-left: 40px;
+  }
+}

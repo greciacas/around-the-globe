@@ -7,6 +7,7 @@ h2{
 
 .profile-div-one{
   flex-wrap: wrap;
+  margin-bottom: 30px;
 }
 
 .profile-div-two{
@@ -34,25 +35,42 @@ h2{
 }
 
 @media (max-width: 1024px) {
-
+  .profile-div-one{
+    flex-wrap: wrap;
+    margin-right: 0px;
+  }
 }
 
 @media (max-width: 800px) {
   .profile-div-one{
     flex-wrap: wrap;
+    margin-right: 0px;
   }
-  
-  .profile-div-two{
-    display: inline-block;
-    max-width: 100%;
-    box-shadow:0px 1px 2px 2px lightgray;
-    padding: 20px;
-    margin-bottom: 10px;
-    background-color: #f9e4e4;
-    border-radius: 20px;
+}
+
+@media (max-width: 600px) {
+  .profile-div-one{
+    flex-wrap: wrap;
+    margin-right: 60px;
+    margin-left: 90px;
   }
 }
 
 @media (max-width: 450px) {
+  .profile-div-one{
+    flex-wrap: wrap;
+    margin-right: 140px;
+    margin-left: 90px;
+  }
 
+  .profile-div-two{
+    display: inline-block;
+    width: 100%;
+    box-shadow:0px 1px 2px 2px lightgray;
+    padding-left: 20px;
+    padding-right: 68px;
+    margin-bottom: 10px;
+    background-color: #ffecec;
+    border-radius: 20px;
+  }
 }

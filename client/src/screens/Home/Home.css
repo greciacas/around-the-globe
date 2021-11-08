@@ -27,3 +27,53 @@
   text-decoration: none;
   color: black;
 }
+
+@media (max-width: 1024px) {
+  .posts{
+    display: grid;
+    grid-template-columns: repeat(2, 2fr);
+    margin-left: 45px;
+  }
+
+  .post{
+    background-color: #fee5e5;
+  }
+}
+
+@media (max-width: 800px) {
+  .posts{
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    margin-left: 200px;
+    margin-right: 0px;
+    margin-bottom: 40px;
+  }
+
+  .post{
+    background-color: #fee5e5;
+  }
+}
+
+@media (max-width: 600px) {
+  .posts{
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    margin-left: 100px;
+  }
+
+  .post{
+    background-color: #fee5e5;
+  }
+}
+
+@media (max-width: 450px) {
+  .posts{
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    margin-left: 25px;
+  }
+
+  .post{
+    background-color: #fee5e5;
+  }
+}

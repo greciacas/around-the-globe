@@ -23,7 +23,7 @@ export default function Nav(props) {
   return (
     <nav>
       <div className='navbar'>
-        <Link to='/' className='home-link'><h1>Around the Globe <GiCommercialAirplane/> <IoEarth/></h1></Link>
+        <Link to='/' className='home-link'><h1>Around the Globe <GiCommercialAirplane style={{verticalAlign: 'middle'}}/> <IoEarth style={{verticalAlign: 'middle'}}/></h1></Link>
         {currentUser ? authenticated : unathenticated}
       </div>
     </nav>
